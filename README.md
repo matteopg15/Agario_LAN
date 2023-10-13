@@ -24,6 +24,8 @@ Programmé avec Python 3
 
 Modules : socket, pygame, time, math, threading, random
 
+Lancez le jeu en exécutant le fichier `cell_crusade_ctf.py`
+### Par défaut :
 Le serveur écouter automatiquement sur le port 8080, modifiable dans le fichier `server_multi.py`
 
 Le client se connecte autmoatiquement sur le port 8080, modifiable dans le fichier `cell_crusade_ctf.py`
