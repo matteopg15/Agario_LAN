@@ -1,0 +1,32 @@
+﻿Requêtes :
+	- POS:x,y,taille|
+	-> Le client envoie ses coordonnées
+	-> Renvoie : OK| ou x_mangé,y_mangé:x_mangé,y_mangé...;x_nouveau,y_nouveau:x_nouveau,y_nouveau -> si un adversaire a bouffé
+
+	- UPDATE|
+	-> Le client demande les coos de ses adversaires
+	-> Renvoie : id_ennemi,x,y,taille:id_ennemi,x,y,taille... ; id_flag,r,b:id_flag,r,b OU "LOOSE",id_ennemi
+
+	- INIT|
+	-> Le client initialise sa connexion avec le serveur (à faire en première requête)
+	-> id_client;x_debut,y_debut;id_ennemi,id_ennemi...;x_bouffe,y_bouffe:x_bouffe,y_bouffe...;x_flag,y_flage:x_flag,y_flage...;id_joueur,couleur:id_joueur,couleur... OU 'SB;id,ip:id,ip:id,ip...' (StandBy)
+
+	-FOOD:x,y|
+	-> Le client vient de manger, le serveur doit le détruire et en construire un autre
+	-> Renvoie : x_nouveau;y_nouveau
+	
+	-STOP:err/per/vol|
+	-> Ferme le thread
+	-> -
+	
+	-GO|
+	-> Lance la partie (si le tab_bouffe est généré)
+	-> Renvoie : OK|
+	
+	-WIN:id_ennemi|
+	-> Le client vient de mange l'ennemi 'id_ennemi'
+	-> Renvoie : OK|
+	
+	-FLAG:id_flag|
+	-> Le client se trouve à une distance suffisante du drapeau pour commencer à le capturer
+	-> Renvoie : OK|
